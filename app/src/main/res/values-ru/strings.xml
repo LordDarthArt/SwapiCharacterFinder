@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Поиск персонажей Star Wars</string>
+    <string name="search_hint">Введите имя персонажа Star Wars</string>
+    <string name="no_results_search">Нет результатов, попробуйте провести поиск ещё раз, с использованием другого ключевого слова</string>
+    <string name="menu_exit">Выход</string>
+    <string name="search">Поиск</string>
+    <string name="try_again">Попробовать снова</string>
+    <string name="exit_accept_message">Вы точно хотите выйти из приложения?</string>
+    <string name="yes">Да</string>
+    <string name="cancel">Отмена</string>
+    <string name="albums_list">Список персонажей</string>
+    <string name="height">Высота:</string>
+    <string name="mass">Масса:</string>
+    <string name="free_price">Бесплатно</string>
+    <string name="hair_color">Цвет волос:</string>
+    <string name="skin_color">Цвет кожи:</string>
+    <string name="eye_color">Цвет глаз:</string>
+    <string name="gender">Пол:</string>
+    <string name="birth_year">Год рождения:</string>
+    <string name="online_list">Список персонажей онлайн</string>
+    <string name="history">История</string>
+    <string name="updating">Загрузка</string>
+</resources>
