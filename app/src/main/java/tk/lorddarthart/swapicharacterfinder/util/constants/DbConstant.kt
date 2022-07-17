@@ -4,6 +4,8 @@ package tk.lorddarthart.swapicharacterfinder.util.constants
  * Created by LordDarthArt on 11.11.2019.
  */
 object DbConstant {
+    const val DATABASE_VERSION = 4
+
     const val SWAPI_CHAR = "star_wars_characters"
     const val SWAPI_CHAR_NAME = "star_wars_character_name"
     const val SWAPI_CHAR_HEIGHT = "star_wars_character_height"

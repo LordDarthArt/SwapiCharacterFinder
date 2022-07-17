@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
 
-    <LinearLayout
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/about_album_toolbar"
@@ -16,113 +18,117 @@
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/cardview_light_background">
+    </com.google.android.material.appbar.AppBarLayout>
 
-            <TextView
-                android:id="@+id/character_name"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:text="TextView"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/cardview_light_background"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <TextView
+            android:id="@+id/character_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:text="TextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/character_height"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
+                android:paddingVertical="8dp"
+                android:paddingHorizontal="16dp"
                 android:ellipsize="end"
                 android:maxLines="1"
-                android:text="TextView"
-                app:layout_constraintEnd_toStartOf="@+id/character_mass"
-                app:layout_constraintStart_toStartOf="@+id/character_name"
-                app:layout_constraintTop_toBottomOf="@+id/character_name" />
+                android:layout_weight="1"
+                tools:text="TextView"/>
 
             <TextView
                 android:id="@+id/character_mass"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:paddingVertical="8dp"
+                android:paddingEnd="16dp"
                 android:ellipsize="end"
                 android:maxLines="1"
-                android:text="TextView"
-                app:layout_constraintEnd_toEndOf="@+id/character_name"
-                app:layout_constraintTop_toBottomOf="@+id/character_name" />
+                tools:text="TextView" />
 
-            <TextView
-                android:id="@+id/character_hair_color"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:text="TextView"
-                app:layout_constraintEnd_toEndOf="@+id/character_mass"
-                app:layout_constraintStart_toStartOf="@+id/character_height"
-                app:layout_constraintTop_toBottomOf="@+id/character_height" />
+        </LinearLayout>
 
-            <TextView
-                android:id="@+id/character_skin_color"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:text="TextView"
-                app:layout_constraintEnd_toEndOf="@+id/character_hair_color"
-                app:layout_constraintStart_toStartOf="@+id/character_hair_color"
-                app:layout_constraintTop_toBottomOf="@+id/character_hair_color" />
+        <TextView
+            android:id="@+id/character_hair_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="8dp"
+            android:paddingHorizontal="16dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            tools:text="TextView"/>
 
-            <TextView
-                android:id="@+id/character_eye_color"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:text="TextView"
-                app:layout_constraintEnd_toEndOf="@+id/character_skin_color"
-                app:layout_constraintStart_toStartOf="@+id/character_skin_color"
-                app:layout_constraintTop_toBottomOf="@+id/character_skin_color" />
+        <TextView
+            android:id="@+id/character_skin_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            tools:text="TextView"/>
+
+        <TextView
+            android:id="@+id/character_eye_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            tools:text="TextView" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/character_gender"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="8dp"
+                android:layout_weight="1"
                 android:ellipsize="end"
                 android:maxLines="1"
-                android:text="TextView"
-                app:layout_constraintEnd_toEndOf="@+id/character_eye_color"
-                app:layout_constraintTop_toBottomOf="@+id/character_eye_color" />
+                tools:text="TextView" />
 
             <TextView
                 android:id="@+id/character_birth_year"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
+                android:paddingVertical="8dp"
+                android:paddingEnd="16dp"
                 android:ellipsize="end"
                 android:maxLines="1"
-                android:text="TextView"
-                app:layout_constraintBottom_toBottomOf="@+id/character_gender"
-                app:layout_constraintEnd_toStartOf="@+id/character_gender"
-                app:layout_constraintStart_toStartOf="@+id/character_eye_color"
-                app:layout_constraintTop_toTopOf="@+id/character_gender" />
+                tools:text="TextView"/>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
 
     </LinearLayout>
 
-</layout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

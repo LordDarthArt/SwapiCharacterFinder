@@ -10,7 +10,7 @@ import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import tk.lorddarthart.swapicharacterfinder.BuildConfig
 import tk.lorddarthart.swapicharacterfinder.R
-import tk.lorddarthart.swapicharacterfinder.app.App
+import tk.lorddarthart.swapicharacterfinder.featurecharactersearcher.presentation.App
 import java.math.RoundingMode
 import java.text.DecimalFormat
 
@@ -36,8 +36,8 @@ object UtilFunctions {
         val screen = Rect(
             0,
             0,
-            App.instance.resources.displayMetrics.widthPixels,
-            App.instance.resources.displayMetrics.heightPixels
+            view.context.resources.displayMetrics.widthPixels,
+            view.context.resources.displayMetrics.heightPixels
         )
         return actualPosition.intersect(screen)
     }
@@ -45,21 +45,21 @@ object UtilFunctions {
     fun animatedImgLoad(urlString: String?, imageView: ImageView) {
         if (Build.VERSION.SDK_INT>= Build.VERSION_CODES.P) {
             val animPlaceholderPiePlus = ContextCompat.getDrawable(
-                App.instance,
+                imageView.context,
                 R.drawable.ic_preload
             ) as AnimatedImageDrawable
             animPlaceholderPiePlus.start()
-            Glide.with(App.instance).load(urlString)
+            Glide.with(imageView.context).load(urlString)
                 .placeholder(animPlaceholderPiePlus)
                 .error(R.drawable.ic_no_image_available)
                 .into(imageView)
         } else {
             val animPlaceholderOreoMinus = ContextCompat.getDrawable(
-                App.instance,
+                imageView.context,
                 R.drawable.ic_preload
             ) as AnimationDrawable
             animPlaceholderOreoMinus.start()
-            Glide.with(App.instance).load(urlString)
+            Glide.with(imageView.context).load(urlString)
                 .placeholder(animPlaceholderOreoMinus)
                 .error(R.drawable.ic_no_image_available)
                 .into(imageView)
